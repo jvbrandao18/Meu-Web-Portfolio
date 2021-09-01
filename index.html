@@ -13,7 +13,7 @@
         <!--==================== CSS ====================-->
         <link rel="stylesheet" href="assets/css/style.css">
 
-        <title>Responsive Portfolio Website</title>
+        <title>Bem vindo(a) ao meu portfolio!</title>
     </head>
     <body>
         <!--==================== HEADER ====================-->
@@ -71,6 +71,7 @@
             <section class="home section" id="home">
                 <div class="home__container container grid">
                     <div class="home__content grid">
+                        <!--==================== Botões das paginas ====================-->
                         <div class="home__social">
                             <a href="https://www.instagram.com/jvbrandao18/" target="_blank" class="home__social-icon">
                                 <i class="uil uil-instagram-alt"></i>
@@ -84,8 +85,9 @@
                                 <i class="uil uil-github"></i>
                             </a>
                         </div>
-                        <div class="home_img">
-                            <svg class="home_blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <!-- Imagem com fundo -->
+                        <div class="home__img">
+                            <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <mask id="mask0" mask-type="alpha">
                                     <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
                                     130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
@@ -97,24 +99,25 @@
                                     165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
                                     129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
                                     -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                                    <image class="home__blob-img" x='12' y='-44' xlink:href="assets/img/euBonitao.jpg"/>
+                                    <image class="home__blob-img" x='12' y='5' xlink:href="assets/img/euBonitaoSemFundo.png"/>
                                 </g>
                             </svg>
                         </div>
+                        <!-- Menu de descrição e apresentação -->
                         <div class="home__data">
                             <h1 class="home__title">Olá, sou o João</h1>
-                            <h3 class="home__subtitle">Desenvolvedor Frontend</h3>
+                            <h3 class="home__subtitle">Desenvolvedor Frontend, Programador e editor de fotos e vídeos</h3>
                             <p class="home__description">Atualmente curso Ciência da Computação na Pontifícia 
                                 Universidade Católica do Paraná no 4° período, possuo experiência em 
                                 linguagens de computação como Python, JavaScript, HTML, CSS e C#. 
                                 Com conhecimento intermediário para avançado em HTML, CSS e JavaScript 
-                                bem como desenvolvimento web.</p>
+                                bem como desenvolvimento web, edições de fotos, vídeos e criações de logos.</p>
                             <a href="#contact" class="button button--flex">
                                 Fale comigo <i class="uil uil-message button__icon"></i>
                             </a>
                         </div>
                     </div>
-
+                    <!-- Mostrador de scroll do mouse -->
                     <div class="home__scroll">
                         <a href="#about" class="home__scroll-button button--flex">
                             <i class="uil uil-mouse-alt home__scroll-mouse"></i>
@@ -127,14 +130,132 @@
 
             <!--==================== ABOUT ====================-->
             <section class="about section" id="about">
+                <h2 class="section__title">Sobre mim</h2>
+                <span class="section__subtitle">Minha apresentação</span>
+                
+                <div class="about__container container grid">
+                    <img src="assets/img/eu.jpg" alt="" class="about__img">
+                    
+                    <div class="about__data">
+                        <p class="about__description">INSERIR TEXTO DE DESCRIÇÃO</p>
 
-        
+                        <div class="about__info">
+                            <div>
+                                <span class="about__info-title">1+</span>
+                                <span class="about__info-name">Anos <br> experiência</span>
+                            </div>
+
+                            <div>
+                                <span class="about__info-title">10+</span>
+                                <span class="about__info-name">Projetos <br> completados</span>
+                            </div>
+
+                            <div>
+                                <span class="about__info-title">1</span>
+                                <span class="about__info-name">Empresa <br> trabalhada</span>
+                            </div>
+                        </div>
+
+                        <div class="about__buttons">
+                            <a download="" href="assets/pdf/Profile.pdf" class="button button--flex">
+                                Baixar CV<i class="uil uil-download-alt button__icon"></i>
+                            </a>
+                                
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!--==================== SKILLS ====================-->
             <section class="skills section" id="skills">
+                <h2 class="section__title">Habilidades</h2>
+                <span class="section__subtitle">Meus níveis técnicos</span>
+            
+                <div class="skills__container container grid">
+                    <div>
+                        <!--==================== SKILLS 1 ====================-->
+                        <div class="skills__content">
+                            
+                            <!--==================== COLOCAR AQUI O RAIO EM PORCENTAGEM ANIMADO ====================-->
+                            <!--  <div class="fora">
+                                <div class="dentro">
+                                    <div id="number">
+                                    </div>
+                                </div>
+                            </div> -->
 
+                            <div class="skills__header">
+                                <i class="uil uil-html5-alt skills__icon"></i>
 
+                                <div>
+                                    <h1 class="skills__title">Desenvolvedor Frontend</h1>
+                                    <span class="skills__subtitle">Mais de 1 ano</span>
+                                </div>
+
+                                <i class="uil-angle-down skills__arrow"></i>
+                            </div>
+                            
+                            <div class="skills__list grid">
+                                <div class="skills__data">
+                                    <div class="skills_title">
+                                        <h3 class="skills__name">HTML</h3>
+                                        <span class="skills__number">70%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage skills__html"></span>
+                                    </div>
+
+                                    <div class="skills__data">
+                                        <div class="skills_title">
+                                            <h3 class="skills__name">CSS</h3>
+                                            <span class="skills__number">80%</span>
+                                        </div>
+                                        <div class="skills__bar">
+                                            <span class="skills__percentage skills__html"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="skills__data">
+                                        <div class="skills_title">
+                                            <h3 class="skills__name">JavaScript</h3>
+                                            <span class="skills__number">50%</span>
+                                        </div>
+                                        <div class="skills__bar">
+                                            <span class="skills__percentage skills__html"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="skills__data">
+                                        <div class="skills_title">
+                                            <h3 class="skills__name">React</h3>
+                                            <span class="skills__number">40%</span>
+                                        </div>
+                                        <div class="skills__bar">
+                                            <span class="skills__percentage skills__html"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--==================== SKILLS 2 ====================-->
+                        <!--==================== SKILLS 3 ====================-->
+                        <!--==================== SKILLS 4 ====================-->
+
+                    </div> 
+                </div>       
+                        <svg class="circle__colorized"xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                            <defs>
+                               <linearGradient id="GradientColor">
+                                  <stop offset="0%" stop-color="#e91e63" />
+                                  <stop offset="100%" stop-color="#673ab7" />
+                               </linearGradient>
+                            </defs>
+                            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+                        </svg>
+                    </div>
+
+            
+            
             </section>
 
             <!--==================== QUALIFICATION ====================-->
@@ -185,6 +306,21 @@
 
         <!--==================== SWIPER JS ====================-->
         <script src=""></script>
+        
+        <!-- funcao para carregar a porcentagem e animar o circulo -->
+        <script>
+            let number = document.getElementById("number");
+            let counter = 0;
+            setInterval(() => {
+                if(counter == 65){
+                    clearInterval();
+                }
+                else{
+                    counter += 1;
+                    number.innerHTML = counter + "%"
+                }
+            }, 15);
+        </script>
 
         <!--==================== MAIN JS ====================-->
         <script src="assets/js/main.js"></script>

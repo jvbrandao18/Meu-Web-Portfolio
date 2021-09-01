@@ -8,7 +8,7 @@
 
     /*========== Colors ==========*/
     /* Change favorite color */
-    --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+    --hue-color: 360; /*Purple 250 - Green 142 - Blue 230 - Pink 340 - Red 355 */
 
     /* HSL color mode */
     --first-color: hsl(var(--hue-color), 69%, 61%);
@@ -116,18 +116,18 @@ img{
     padding: 2rem 0 4rem;
 }
 
-.section-title{
+.section__title{
     font-size: var(--h1-font-size);
 }
 
-.section_subtitle{
+.section__subtitle{
     display: block;
     font-size: var(--small-font-size);
     margin-bottom: var(--mb-3);
 }
 
-.section_title,
-.section_subtitle{
+.section__title,
+.section__subtitle{
     text-align: center;
 }
 
@@ -172,7 +172,7 @@ img{
 }
 
 .nav__toggle{
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     cursor: pointer;
 }
 
@@ -180,7 +180,7 @@ img{
     color: var(--first-color);
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 3250px){
     .nav__menu{
         position: fixed;
         bottom: -100%;
@@ -252,13 +252,13 @@ img{
 }
 
 .home__social{
-    display: grid;
+    display: flex;
     grid-template-columns: max-content;
     row-gap: 1rem;
 }
 
 .home__social-icon{
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     color: var(--first-color);
 }
 
@@ -267,12 +267,13 @@ img{
 }
 
 .home__blob{
-    width: 200px;
+    width: 250px;
     fill: var(--first-color);
 }
 
 .home__blob-img{
     width: 170px;
+    text-align: center;
 }
 
 .home__data{
@@ -281,6 +282,7 @@ img{
 
 .home__title{
     font-size: var(--big-font-size);
+    text-align: center;
 }
 
 .home__subtitle{
@@ -288,6 +290,7 @@ img{
     color: var(--text-color);
     font-weight: var(--font-medium);
     margin-bottom: var(--mb-0-75);
+    text-align: center;
 }
 
 .home__description{
@@ -295,7 +298,7 @@ img{
 }
 
 .home__scroll{
-    /* display: none; */
+    display: none;
 }
 
 .home__scroll-button{
@@ -323,12 +326,132 @@ img{
 }
 
 /*==================== BUTTONS ====================*/
+.button{
+    display: inline-block;
+    background-color: var(--first-color);
+    color: #FFF;
+    padding: 1rem;
+    border-radius: .5rem;
+    font-weight: var(--font-medium);
+}
 
+.button:hover{
+    background-color: var(--first-color);   
+}
+
+.button__icon{
+    font-size: 1.25rem;
+    margin-left: var(--mb-0-5);
+    transition: .3s;
+}
+
+.button--flex{
+    display: inline-flex;
+    align-items: center;
+}
 
 /*==================== ABOUT ====================*/
+.about__img{
+    width: 200px;
+    border-radius: .5rem;
+    justify-self: center;
+    align-self: center;
+}
 
+.about__description{
+    text-align: center;
+    margin-bottom: var(--mb-2-5);
+}
+
+.about__info{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: var(--mb-2-5);
+}
+
+.about__info-title{
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+}
+
+.about__info-name{
+    font-size: var(--smaller-font-size);
+}
+
+.about__info-title,
+.about__info-name{
+    display: block;
+    text-align: center;
+}
+
+.about__buttons{
+    display: flex;
+    justify-content: center;
+}
 
 /*==================== SKILLS ====================*/
+
+/*==================== SKILLS 1 ====================*/
+
+/* conteudo  */
+.skills__content{
+    width: 160px;
+    height: 160px;
+    position: relative;
+}
+/* circulo de fora */
+.fora{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; 
+    padding: 20px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(255,255,255,0.7);
+}
+/* circulo de dentro */
+.dentro{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1),
+                0.5px 0.5px 0px rgba(0,0,0,0.05),
+                0px 12px 10px -10px rgba(0,0,0,0.05);
+}
+
+#number{
+    font-weight: var(--font-medium);
+    color: var(--first-color)
+}
+
+circle{
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: anim 1.5s linear forwards;
+}
+/* circulo colorido */
+.circle__colorized{
+    position: absolute;
+    top: 1385px;
+    left: 0;
+}
+/* animacao */
+/* @keyframes anim{
+    100%{
+        stroke-dashoffset: 250;
+    }
+} */
+/*==================== SKILLS 2 ====================*/
+
+/*==================== SKILLS 3 ====================*/
 
 
 /*==================== QUALIFICATION ====================*/
