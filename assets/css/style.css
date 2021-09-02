@@ -391,68 +391,149 @@ img{
 }
 
 /*==================== SKILLS ====================*/
-
-/*==================== SKILLS 1 ====================*/
-
-/* conteudo  */
-.skills__content{
-    width: 160px;
-    height: 160px;
-    position: relative;
+.skills__container{
+    row-gap: 0;
 }
-/* circulo de fora */
-.fora{
-    width: 160px;
-    height: 160px;
-    border-radius: 50%; 
-    padding: 20px;
-    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-                -6px -6px 10px -1px rgba(255,255,255,0.7);
-}
-/* circulo de dentro */
-.dentro{
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+
+.skills__header{
     display: flex;
     align-items: center;
-    justify-content: center;
-    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
-                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
-                -0.5px -0.5px 0px rgba(255,255,255,1),
-                0.5px 0.5px 0px rgba(0,0,0,0.05),
-                0px 12px 10px -10px rgba(0,0,0,0.05);
+    margin-bottom: var(--mb-2-5);
+    cursor: pointer;
 }
 
-#number{
+.skills__icon,
+.skills__arrow{
+    font-size: 2rem;
+    color: var(--first-color);
+}
+
+.skills__icon{
+    margin-right: var(--mb-0-75);
+}
+
+.skills__title{
+    font-size: var(--h3-font-size);
+}
+
+.skills__subtitle{
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+}
+
+.skills__arrow{
+    margin-left: auto;
+    transition: .4s;
+}
+
+.skills__list{
+    row-gap: 1.5rem;
+    padding-left: 2.7rem;
+}
+
+.skills__titles{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--mb-0-5);
+}
+
+.skills__name{
+    font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
-    color: var(--first-color)
 }
 
-circle{
-    fill: none;
-    stroke: url(#GradientColor);
-    stroke-width: 20px;
-    stroke-dasharray: 472;
-    stroke-dashoffset: 472;
-    animation: anim 1.5s linear forwards;
+.skills__bar,
+.skills__percentage{
+    height: 5px;
+    border-radius: .25rem;
 }
-/* circulo colorido */
-.circle__colorized{
-    position: absolute;
-    top: 1385px;
-    left: 0;
+
+.skills__bar{
+    background-color: var(--first-color-lighter);
 }
-/* animacao */
-/* @keyframes anim{
-    100%{
-        stroke-dashoffset: 250;
-    }
-} */
-/*==================== SKILLS 2 ====================*/
 
-/*==================== SKILLS 3 ====================*/
+.skills__percentage{
+    display: block;
+    background-color: var(--first-color);
+}
 
+.skills__html{
+    width: 70%;
+}
+
+.skills__css{
+    width: 90%;
+}
+
+.skills__javascript{
+    width: 50%;
+}
+
+.skills__react{
+    max-width: 40%;
+}
+
+.skills__ruby{
+    max-width: 70%;
+}
+
+.skills__nodejs{
+    max-width: 40%;
+}
+
+.skills__java{
+    max-width: 20%;
+}
+
+.skills__python{
+    max-width: 40%;
+}
+
+.skills__figma{
+    max-width: 40%;
+}
+
+.skills__photoshop{
+    max-width: 80%;
+}
+
+.skills__adobepremierepro{
+    max-width: 90%;
+}
+
+.skills__canvas{
+    max-width: 70%;
+}
+
+.skills__word{
+    max-width: 95%;
+}
+
+.skills__excel{
+    max-width: 70%;
+}
+
+.skills__powerpoint{
+    max-width: 80%;
+}
+
+.skills__ubuntu{
+    max-width: 60%;
+}
+
+.skills__close .skills__list{
+    height: 0;
+    overflow: hidden;
+}
+
+.skills__open .skills__list{
+    height: max-content;
+    margin-bottom: var(--mb-2-5);
+}
+
+.skills__open .skills__arrow{
+    transform: rotate(-180deg);
+}
 
 /*==================== QUALIFICATION ====================*/
 
