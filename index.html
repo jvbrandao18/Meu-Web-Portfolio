@@ -39,13 +39,13 @@
                             </a>
                         </li>
                         <li class="nav__item">
-                            <a href="#services" class="nav__link">
-                                <i class="uil uil-briefcase-alt nav__icon"></i> Serviços
+                            <a href="#qualifications" class="nav__link">
+                                <i class="uil uil-scenery nav__icon"></i> Qualificações
                             </a>
                         </li>
                         <li class="nav__item">
-                            <a href="#porfolio" class="nav__link">
-                                <i class="uil uil-scenery nav__icon"></i> Portfolio
+                            <a href="#services" class="nav__link">
+                                <i class="uil uil-briefcase-alt nav__icon"></i> Serviços
                             </a>
                         </li>
                         <li class="nav__item">
@@ -134,7 +134,7 @@
                 <span class="section__subtitle">Minha apresentação</span>
                 
                 <div class="about__container container grid">
-                    <img src="assets/img/eu.jpg" alt="" class="about__img">
+                    <img src="assets/img/euNike.JPG" alt="" class="about__img">
                     
                     <div class="about__data">
                         <p class="about__description">INSERIR TEXTO DE DESCRIÇÃO</p>
@@ -414,15 +414,219 @@
             </section>
 
             <!--==================== QUALIFICATION ====================-->
-            <section class="qualification section">
+            <section class="qualification section" id="qualifications">
+                <h2 class="section__title">Qualificações</h2>
+                <span class="section__subtitle">Minha jornada pessoal</span>
 
+                <div class="qualification__container container grid">
+                    <div class="qualification__tabs grid">
+                        <div class="qualification__button button--flex qualification__active" data-target='#education'>
+                            <i class="uil uil-graduation-cap qualification__icon"></i>
+                            Formação
+                        </div>
+                   
+                        <div class="qualification__button button--flex" data-target="#work">
+                            <i class="uil uil-briefcase-alt qualification__icon"></i>
+                            Trabalho
+                        </div>
+                    </div>
 
+                    <div class="qualification__sections">
+                        <!--==================== QUALIFICATION CONTENT 1====================-->
+                        <div class="qualification__content qualification__active" data-content id="education">
+                            <!--==================== QUALIFICATION 1====================-->
+                            <div class="qualification__data">
+                                <div>
+                                    <h3 class="qualification__title">Bacharelado em Ciência da Computação</h3>
+                                    <span class="qualification__subtitle">PUCPR</span>
+                                    <div class="qualification__calender">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2020 - 2024
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <span class="qualification__line"></span>
+                                </div>
+                            </div>
+                            <!--==================== QUALIFICATION 2====================-->
+                            <div class="qualification__data">
+                                <div></div>
+
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                    <span class="qualification__line"></span>
+                                </div>
+
+                                <div>
+                                    <h3 class="qualification__title">Curso em JavaScript</h3>
+                                    <span class="qualification__subtitle">IFRS</span>
+                                    <div class="qualification__calender">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2012 - 2020 (30 horas)
+                                    </div>
+                                </div>
+                            </div>
+                             <!--==================== QUALIFICATION 3====================-->
+                             <div class="qualification__data">
+                                <div>
+                                    <h3 class="qualification__title">Tecnologias para Desenvolvimento Web</h3>
+                                    <span class="qualification__subtitle">PUCPR</span>
+                                    <div class="qualification__calender">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2021 - 2021 (6 meses)
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="qualification__rounder"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                         <!--==================== QUALIFICATION CONTENT 2====================-->
+                         <div class="qualification__content" data-content id="work">
+                            <!--==================== QUALIFICATION 1====================-->
+                            <div class="qualification__data">
+                                <div>
+                                    <h3 class="qualification__title">Desenvolvedor Front e Backend (Bolsista)</h3>
+                                    <span class="qualification__subtitle">Go44 Transformação Digital</span>
+                                    <div class="qualification__calender">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2020 - 2021 (7 meses)
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="qualification__rounder"></span>                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!--==================== SERVICES ====================-->
             <section class="services section" id="services">
-                
+                <h2 class="section__title">DESENVOLVENDO AQUI!!!!!</h2>
+                <h2 class="section__title">Serviços</h2>
+                <span class="section__subtitle">O que ofereço</span>
 
+                <div class="services__container container grid">
+                    <!--==================== SERVICES 1====================-->
+                    <div class="services__content">
+                        <div>
+                            <i class="uil uil-web-grid services__icon"></i>
+                            <h3 class="services__title">Ui/Uix <br> Designer </h3>
+                        </div>
+
+                        <span class="button button--flex button--small button services__button">
+                            Veja mais
+                            <i class="uil uil-arrow-right button-icon"></i>
+                        </span>
+
+                        <div class="services__modal">
+                            <div class="services__modal--content">
+                                <h4 class="services__modal-title">Ui/Ux <br> Designer</h4>
+                                <i class="uil uil-times services__modal-close"></i>
+
+                                <ul class="services__modal-services grid">
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>I develop the user interface</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>Web page development</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>I creat ux elements</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>I position</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--==================== SERVICES 2====================-->
+                    <div class="services__content">
+                        <div>
+                            <i class="uil uil-arrow services__icon"></i>
+                            <h3 class="services__title">Frontend <br> Developer </h3>
+                        </div>
+
+                        <span class="button button--flex button--small button services__button">
+                            Veja mais
+                            <i class="uil uil-arrow-right button-icon"></i>
+                        </span>
+
+                        <div class="services__modal">
+                            <div class="services__modal--content">
+                                <h4 class="services__modal-title">Frontend <br> Developer</h4>
+                                <i class="uil uil-times services__modal-close"></i>
+
+                                <ul class="services__modal-services grid">
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>I develop the user interface</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>Web page development</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>I creat ux elements</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>I position</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--==================== SERVICES 3====================-->
+                    <div class="services__content">
+                        <div>
+                            <i class="uil uil-pen services__icon"></i>
+                            <h3 class="services__title">Branding <br> Designer </h3>
+                        </div>
+
+                        <span class="button button--flex button--small button services__button">
+                            Veja mais
+                            <i class="uil uil-arrow-right button-icon"></i>
+                        </span>
+
+                        <div class="services__modal">
+                            <div class="services__modal--content">
+                                <h4 class="services__modal-title">Ui/Ux <br> Designer</h4>
+                                <i class="uil uil-times services__modal-close"></i>
+
+                                <ul class="services__modal-services grid">
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>I develop the user interface</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>Web page development</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>I creat ux elements</p>
+                                    </li>
+                                    <li class="services__modal-service">
+                                        <i class="uil uil-check-circle services__modal-icon"></i>
+                                        <p>I position</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!--==================== PORTFOLIO ====================-->
