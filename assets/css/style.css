@@ -107,7 +107,7 @@ a{
 }
 
 img{
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -133,7 +133,7 @@ img{
 
 /*==================== LAYOUT ====================*/
 .container{
-    max-width: 768px;
+    width: 768px;
     margin-left: var(--mb-1-5);
     margin-right: var(--mb-1-5);
 }
@@ -154,7 +154,7 @@ img{
 
 /*==================== NAV ====================*/
 .nav{
-    max-width: 3250px;
+    width: 3250px;
     height: var(--header-height);
     display: flex;
     justify-content: space-between;
@@ -180,7 +180,7 @@ img{
     color: var(--first-color);
 }
 
-@media screen and (max-width: 3250px){
+@media screen and (width: 3250px){
     .nav__menu{
         position: fixed;
         bottom: -100%;
@@ -474,11 +474,11 @@ img{
 }
 
 .skills__html{
-    width: 70%;
+    width: 65%;
 }
 
 .skills__css{
-    width: 90%;
+    width: 70%;
 }
 
 .skills__javascript{
@@ -486,55 +486,59 @@ img{
 }
 
 .skills__react{
-    max-width: 40%;
+    width: 55%;
 }
 
 .skills__ruby{
-    max-width: 70%;
+    width: 70%;
 }
 
 .skills__nodejs{
-    max-width: 40%;
+    width: 40%;
 }
 
 .skills__java{
-    max-width: 20%;
+    width: 20%;
 }
 
 .skills__python{
-    max-width: 40%;
+    width: 40%;
 }
 
 .skills__figma{
-    max-width: 40%;
+    width: 40%;
 }
 
 .skills__photoshop{
-    max-width: 80%;
+    width: 80%;
 }
 
 .skills__adobepremierepro{
-    max-width: 90%;
+    width: 90%;
 }
 
 .skills__canvas{
-    max-width: 70%;
+    width: 100%;
 }
 
 .skills__word{
-    max-width: 95%;
+    width: 95%;
 }
 
 .skills__excel{
-    max-width: 70%;
+    width: 80%;
 }
 
 .skills__powerpoint{
-    max-width: 80%;
+    width: 90%;
 }
 
 .skills__ubuntu{
-    max-width: 60%;
+    width: 75%;
+}
+
+.skills__lubuntu{
+    width: 60%;
 }
 
 .skills__close .skills__list{
