@@ -24,7 +24,7 @@
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list grid">
                         <li class="nav__item">
-                            <a href="#home" class="nav__link">
+                            <a href="#home" class="nav__link active-link">
                                 <i class="uil uil-home nav__icon"></i> Home
                             </a>
                         </li>
@@ -58,6 +58,9 @@
                 </div>
 
                 <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class="uil uil-moon change-theme" id="theme-button"></i>
+                    
                     <div class="nav__toggle" id="nav-toggle">
                         <i class="uil uil-apps"></i>
                     </div>
@@ -625,11 +628,11 @@
             <!--==================== SERVICES ====================-->
             <section class="services section" id="services">
                 <h2 class="section__title">Serviços</h2>
-                <span class="section__subtitle">O que ofereço</span>
+                <span class="section__subtitle">Em desenvolvimento, desculpe o transtorno!</span>
 
                 <div class="services__container container grid">
                     <!--==================== SERVICES 1====================-->
-                    <div class="services__content">
+                    <!-- <div class="services__content">
                         <div>
                             <i class="uil uil-web-grid services__icon"></i>
                             <h3 class="services__title">Ui/Uix <br> Designer </h3>
@@ -661,9 +664,9 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!--==================== SERVICES 2====================-->
-                    <div class="services__content">
+                    <!-- <div class="services__content">
                         <div>
                             <i class="uil uil-arrow services__icon"></i>
                             <h3 class="services__title">Frontend <br> Developer </h3>
@@ -699,9 +702,9 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!--==================== SERVICES 3====================-->
-                    <div class="services__content">
+                    <!-- <div class="services__content">
                         <div>
                             <i class="uil uil-pen services__icon"></i>
                             <h3 class="services__title">Branding <br> Designer </h3>
@@ -737,7 +740,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
 
@@ -770,23 +773,61 @@
 
                             <div>
                                 <h3 class="contact__title">Me ligue</h3>
-                                <span class="contact__subtitle">(49)XXXX-XXXX</span>
+                                <span class="contact__subtitle">(49)99202-8413</span>
+                            </div>
+                            <div>
+
+                            <i class="uil uil-envelope-add"></i>
+                                <h3 class="contact__title">E-mail</h3>
+                                <span class="contact__subtitle">jvitbrandao@gmail.com</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            
             </section>
         </main>
 
         <!--==================== FOOTER ====================-->
         <footer class="footer">
+            <div class="footer__bg">
+                <div class="footer__container container grid">
+                    <div>
+                        <h1 class="footer__title">João Vitor</h1>
+                        <span class="footer__subtitle">Frontend Developer</span>
+                    </div>
 
-            
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#home" class="footer__link">Home</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="footer__link">Serviços</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="footer__link">Entre em contato</a>
+                        </li>
+                    </ul>
+
+                    <div class="footer__socials">
+                        <a href="https://www.instagram.com/jvbrandao18/" target="_blank" class="footer__social">
+                            <i class="uil uil-instagram-alt"></i>
+                        </a>
+
+                        <a href="https://twitter.com/jvbrandao_" target="_blank" class="footer__social">
+                            <i class="uil uil-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="footer__copy">&#169; Coquinha gelada. All rights reserved</p>
+            </div>
         </footer>
         
         <!--==================== SCROLL TOP ====================-->
-        
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="uil uil-arrow-up scrollup__icon"></i>
+        </a>
+
 
         <!--==================== SWIPER JS ====================-->
         <script src=""></script>
