@@ -716,6 +716,12 @@ img {
 
 /*==================== SERVICES ====================*/
 /*==================== SERVICES ====================*/
+.services--center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .services__container {
     grid-template-columns: 1fr;
     /* Single column */
@@ -726,6 +732,7 @@ img {
     /* Limit width for card look */
     margin: 0 auto;
     /* Center */
+    justify-content: center;
 }
 
 .services__content {
@@ -1204,6 +1211,7 @@ img {
 
     .services__container {
         grid-template-columns: repeat(3, 238px);
+        justify-content: center;
     }
 
 }
