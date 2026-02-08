@@ -1131,20 +1131,36 @@ img {
 
 @media screen and (max-width: 768px) {
     .qualification__data {
-        grid-template-columns: 2rem 1fr;
-        column-gap: 1rem;
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        background-color: var(--container-color);
+        border-radius: .75rem;
+        padding: 1rem 1.25rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
     .qualification__marker {
-        grid-column: 1;
+        display: none;
     }
 
     .qualification__content--left,
     .qualification__content--right {
-        grid-column: 2;
+        grid-column: 1;
         text-align: left;
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .qualification__calender {
+        white-space: nowrap;
+    }
+
+    .qualification__line {
+        min-height: 0;
+    }
+
+    .qualification__data + .qualification__data {
+        margin-top: 1rem;
     }
 }
 
