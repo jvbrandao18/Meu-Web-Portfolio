@@ -119,6 +119,7 @@ body {
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 h1,
@@ -315,10 +316,14 @@ img {
     box-shadow: none !important;
     border: none !important;
     overflow: visible;
+    width: min(80vw, 350px);
+    margin: 0 auto;
 }
 
 .home__blob {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
     fill: var(--first-color);
     background: none !important;
     box-shadow: none !important;
@@ -331,7 +336,8 @@ img {
 }
 
 .home__blob-img {
-    width: 170px;
+    width: 100%;
+    max-width: 170px;
     text-align: center;
     background: none !important;
     border: none !important;
