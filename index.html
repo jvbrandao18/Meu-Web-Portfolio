@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="assets/css/style.css?v=1.2">
+    <link rel="stylesheet" href="assets/css/style.css?v=2026.10">
 
-    <title>Olá! Seja bem vindo(a)</title>
+    <meta name="description" content="Portfólio de João Vitor Brandão: desenvolvimento Python, backend, automação, integrações e diagnóstico de incidentes em produção.">
+    <title>João Vitor Brandão | Python, Backend e Automação</title>
 </head>
 
 <body>
@@ -45,6 +46,11 @@
                     <li class="nav__item">
                         <a href="#services" class="nav__link">
                             <i class="uil uil-briefcase-alt nav__icon"></i> Serviços
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-code-branch nav__icon"></i> Projetos
                         </a>
                     </li>
                     <li class="nav__item">
@@ -107,15 +113,13 @@
                     <!-- Menu de descrição e apresentação -->
                     <div class="home__data">
                         <h1 class="home__title">Olá, sou o João</h1>
-                        <h3 class="home__subtitle">Analista de TI</h3>
+                        <h3 class="home__subtitle">Python · Backend · Automação</h3>
                         <p class="home__description">
-                            <br>
-                            Analista de TI Pleno na PUCPR, com foco em automação segura utilizando Python e Robot Framework. 
-                            Atuo na integração de sistemas corporativos e na aplicação de práticas de DevSecOps no dia a dia.
-                            <br>
-                            <br>
-                            Pós-graduado em Segurança da Informação e Bacharel em Ciência da Computação.
-                            <br>
+                            Analista de TI Pleno na PUCPR. Desenvolvo automações e integrações em Python,
+                            investigo falhas em produção e implemento correções com validação de dados,
+                            tratamento de exceções e logs.
+                            <br><br>
+                            Pós-graduado em Segurança da Informação e bacharel em Ciência da Computação.
                         </p>
                         <a href="#contact" class="button button--flex">
                             Fale comigo <i class="uil uil-message button__icon"></i>
@@ -126,7 +130,7 @@
                 <div class="home__scroll">
                     <a href="#about" class="home__scroll-button button--flex">
                         <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-                        <span class="home__scroll-name">Scroll down</span>
+                        <span class="home__scroll-name">Conheça minha atuação</span>
                         <i class="uil uil-arrow-down home__scroll-arrow"></i>
                     </a>
                 </div>
@@ -143,31 +147,33 @@
 
                 <div class="about__data">
                     <p class="about__description">
-                        Com sólida trajetória em análise de sistemas e gestão de projetos, hoje atuo focado no
-                        desenvolvimento de automações seguras e escaláveis.
-                        Combinando experiência Full Stock (JS, HTML, CSS, SQL) com RPA, busco sempre elevar a maturidade
-                        tecnológica das soluções.
+                        Minha atuação conecta desenvolvimento Python, integração de sistemas e sustentação de aplicações.
+                        Trabalho com APIs REST, Robot Framework, BotCity, SQL, MongoDB e serviços Microsoft,
+                        do entendimento da regra de negócio à validação da solução.
                         <br><br>
-                        Sou comunicativo, adaptável e movido por desafios que combinem eficiência técnica e
-                        conformidade.
+                        Nos projetos autorais, aplico FastAPI, persistência de dados, testes com pytest,
+                        Docker e processamento assíncrono. Uso essas soluções para demonstrar padrões de
+                        confiabilidade, rastreabilidade e manutenção de backend.
                     </p>
 
-                    <div class="about__info">
+                    <div class="about__info" aria-label="Atendimentos documentados">
                         <div>
-                            <span class="about__info-title">5+</span>
-                            <span class="about__info-name">Anos <br> experiência</span>
+                            <span class="about__info-title">150</span>
+                            <span class="about__info-name">Atendimentos<br>concluídos</span>
                         </div>
-
                         <div>
-                            <span class="about__info-title">10+</span>
-                            <span class="about__info-name">Projetos <br> completados</span>
+                            <span class="about__info-title">44</span>
+                            <span class="about__info-name">De alta<br>prioridade</span>
                         </div>
-
                         <div>
-                            <span class="about__info-title">2</span>
-                            <span class="about__info-name">Empresas <br> trabalhadas</span>
+                            <span class="about__info-title">30</span>
+                            <span class="about__info-name">Categorias<br>atendidas</span>
                         </div>
                     </div>
+                    <p class="about__metrics-note">
+                        Recorte de 04/07/2024 a 08/10/2026: atendimentos concluídos com atividade documentada.
+                        Os 44 de alta prioridade integram o total de 150.
+                    </p>
 
                     <div class="about__buttons">
                         <a href="#contact" class="button button--flex">
@@ -181,337 +187,169 @@
         <!--==================== SKILLS ====================-->
         <section class="skills section" id="skills">
             <h2 class="section__title">Habilidades</h2>
-            <span class="section__subtitle">Meus níveis técnicos</span>
+            <span class="section__subtitle">Tecnologias e aplicações</span>
 
             <div class="skills__container container grid">
                 <div>
-                    <!--==================== SKILLS 1 (Frontend) ====================-->
                     <div class="skills__content skills__open">
-                        <div class="skills__header">
-                            <i class="uil uil-html5 skills__icon"></i>
-
-                            <div>
-                                <h1 class="skills__title">Desenvolvedor Frontend</h1>
-                                <span class="skills__subtitle">Mais de 1 ano</span>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
+                        <button type="button" class="skills__header" aria-expanded="true" aria-controls="skill-list-0">
+                            <i class="uil uil-server-network skills__icon" aria-hidden="true"></i>
+                            <span>
+                                <span class="skills__title">Python & Backend</span>
+                                <span class="skills__subtitle">Desenvolvimento e projetos autorais</span>
+                            </span>
+                            <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
+                        </button>
+                        <div class="skills__list grid" id="skill-list-0">
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">HTML</h3>
-                                    <span class="skills__number">90%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__html"></span>
-                                </div>
+                                <h3 class="skills__name">Python</h3>
+                                <p class="skills__evidence">Rotinas de backend, integrações e manutenção de código legado.</p>
                             </div>
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">CSS</h3>
-                                    <span class="skills__number">90%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__css"></span>
-                                </div>
+                                <h3 class="skills__name">FastAPI / Flask</h3>
+                                <p class="skills__evidence">APIs REST, validação de requisições e organização de serviços.</p>
                             </div>
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">JavaScript</h3>
-                                    <span class="skills__number">85%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__javascript"></span>
-                                </div>
+                                <h3 class="skills__name">Pydantic / SQLAlchemy</h3>
+                                <p class="skills__evidence">Contratos de dados, validação e persistência nos projetos autorais.</p>
                             </div>
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">React</h3>
-                                    <span class="skills__number">75%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__react"></span>
-                                </div>
+                                <h3 class="skills__name">Celery / Redis</h3>
+                                <p class="skills__evidence">Filas e workers no projeto de orquestração de automações.</p>
                             </div>
                         </div>
                     </div>
-
-                    <!--==================== SKILLS 2 (Backend) ====================-->
                     <div class="skills__content skills__close">
-                        <div class="skills__header">
-                            <i class="uil uil-server-network skills__icon"></i>
-
-                            <div>
-                                <h1 class="skills__title">Desenvolvedor Backend</h1>
-                                <span class="skills__subtitle">Mais de 1 ano</span>
+                        <button type="button" class="skills__header" aria-expanded="false" aria-controls="skill-list-1">
+                            <i class="uil uil-robot skills__icon" aria-hidden="true"></i>
+                            <span>
+                                <span class="skills__title">Automação & Integrações</span>
+                                <span class="skills__subtitle">Atuação em processos corporativos</span>
+                            </span>
+                            <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
+                        </button>
+                        <div class="skills__list grid" id="skill-list-1">
+                            <div class="skills__data">
+                                <h3 class="skills__name">Robot Framework / BotCity</h3>
+                                <p class="skills__evidence">Desenvolvimento, sustentação e migração de automações.</p>
                             </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
+                            <div class="skills__data">
+                                <h3 class="skills__name">Requests / APIs REST</h3>
+                                <p class="skills__evidence">Integração entre sistemas e tratamento de falhas HTTP.</p>
+                            </div>
+                            <div class="skills__data">
+                                <h3 class="skills__name">Power Automate / Pipefy</h3>
+                                <p class="skills__evidence">Automação de fluxos administrativos.</p>
+                            </div>
+                            <div class="skills__data">
+                                <h3 class="skills__name">SharePoint / Microsoft 365</h3>
+                                <p class="skills__evidence">Integração de documentos e serviços corporativos.</p>
+                            </div>
                         </div>
-
-                        <div class="skills__list grid">
+                    </div>
+                    <div class="skills__content skills__close">
+                        <button type="button" class="skills__header" aria-expanded="false" aria-controls="skill-list-2">
+                            <i class="uil uil-chart-line skills__icon" aria-hidden="true"></i>
+                            <span>
+                                <span class="skills__title">Dados & Diagnóstico</span>
+                                <span class="skills__subtitle">Validação e investigação de falhas</span>
+                            </span>
+                            <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
+                        </button>
+                        <div class="skills__list grid" id="skill-list-2">
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Ruby</h3>
-                                    <span class="skills__number">70%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__ruby"></span>
-                                </div>
+                                <h3 class="skills__name">SQL / PostgreSQL / MongoDB</h3>
+                                <p class="skills__evidence">Consultas, integração e validação de dados.</p>
                             </div>
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Node Js</h3>
-                                    <span class="skills__number">40%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__nodejs"></span>
-                                </div>
+                                <h3 class="skills__name">Logs / Exceções / Retentativas</h3>
+                                <p class="skills__evidence">Investigação de falhas e implementação de correções.</p>
                             </div>
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Java</h3>
-                                    <span class="skills__number">20%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__java"></span>
-                                </div>
+                                <h3 class="skills__name">pandas / openpyxl</h3>
+                                <p class="skills__evidence">Tratamento de dados e arquivos CSV e XLSX.</p>
+                            </div>
+                            <div class="skills__data">
+                                <h3 class="skills__name">Power BI</h3>
+                                <p class="skills__evidence">Construção de dashboards e validação de conjuntos de dados.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div>
-                    <!--==================== SKILLS 3 (Automação & Dados) ====================-->
                     <div class="skills__content skills__close">
-                        <div class="skills__header">
-                            <i class="uil uil-robot skills__icon"></i>
-
-                            <div>
-                                <h1 class="skills__title">Automação & Dados</h1>
-                                <span class="skills__subtitle">Foco principal</span>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
+                        <button type="button" class="skills__header" aria-expanded="false" aria-controls="skill-list-3">
+                            <i class="uil uil-cloud skills__icon" aria-hidden="true"></i>
+                            <span>
+                                <span class="skills__title">Testes & Entrega</span>
+                                <span class="skills__subtitle">Manutenção e validação de soluções</span>
+                            </span>
+                            <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
+                        </button>
+                        <div class="skills__list grid" id="skill-list-3">
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Robot Framework</h3>
-                                    <span class="skills__number">80%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__robot"></span>
-                                </div>
+                                <h3 class="skills__name">pytest</h3>
+                                <p class="skills__evidence">Testes automatizados de APIs e regras de negócio nos projetos autorais.</p>
                             </div>
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Python (RPA)</h3>
-                                    <span class="skills__number">70%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__python_rpa"></span>
-                                </div>
+                                <h3 class="skills__name">Git / GitHub / Azure DevOps</h3>
+                                <p class="skills__evidence">Versionamento e colaboração no desenvolvimento.</p>
                             </div>
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Power Automate</h3>
-                                    <span class="skills__number">60%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__power_automate"></span>
-                                </div>
+                                <h3 class="skills__name">Jenkins / GitHub Actions</h3>
+                                <p class="skills__evidence">Pipelines de execução e integração contínua.</p>
                             </div>
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">SQL / MongoDB</h3>
-                                    <span class="skills__number">100%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__sql"></span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Power BI</h3>
-                                    <span class="skills__number">85%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__powerbi"></span>
-                                </div>
+                                <h3 class="skills__name">Docker / Linux</h3>
+                                <p class="skills__evidence">Ambientes de desenvolvimento e execução.</p>
                             </div>
                         </div>
                     </div>
-
-                    <!--==================== SKILLS 4 (DevOps & Ferramentas) ====================-->
                     <div class="skills__content skills__close">
-                        <div class="skills__header">
-                            <i class="uil uil-wrench skills__icon"></i>
-
-                            <div>
-                                <h1 class="skills__title">DevOps & Ferramentas</h1>
-                                <span class="skills__subtitle">Mais de 1 ano</span>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
+                        <button type="button" class="skills__header" aria-expanded="false" aria-controls="skill-list-4">
+                            <i class="uil uil-html5 skills__icon" aria-hidden="true"></i>
+                            <span>
+                                <span class="skills__title">Web & Comunicação Visual</span>
+                                <span class="skills__subtitle">Conhecimentos complementares</span>
+                            </span>
+                            <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
+                        </button>
+                        <div class="skills__list grid" id="skill-list-4">
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Git / GitHub</h3>
-                                    <span class="skills__number">100%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__git"></span>
-                                </div>
+                                <h3 class="skills__name">HTML / CSS / JavaScript</h3>
+                                <p class="skills__evidence">Desenvolvimento e manutenção deste portfólio.</p>
                             </div>
-
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Docker</h3>
-                                    <span class="skills__number">90%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__docker"></span>
-                                </div>
+                                <h3 class="skills__name">Ruby on Rails</h3>
+                                <p class="skills__evidence">Experiência de desenvolvimento web na Go44.</p>
                             </div>
-
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Linux</h3>
-                                    <span class="skills__number">50%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__linux"></span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Jira / Scrum</h3>
-                                    <span class="skills__number">90%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__jira"></span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Azure DevOps</h3>
-                                    <span class="skills__number">90%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__azure"></span>
-                                </div>
+                                <h3 class="skills__name">Figma / Photoshop / Premiere</h3>
+                                <p class="skills__evidence">Apoio à produção de interfaces, imagens e vídeos.</p>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div>
-                    <!--==================== SKILLS 5 (Designer) ====================-->
                     <div class="skills__content skills__close">
-                        <div class="skills__header">
-                            <i class="uil uil-swatchbook skills__icon"></i>
-
-                            <div>
-                                <h1 class="skills__title">Designer</h1>
-                                <span class="skills__subtitle">Mais de 2 anos</span>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
+                        <button type="button" class="skills__header" aria-expanded="false" aria-controls="skill-list-5">
+                            <i class="uil uil-file-alt skills__icon" aria-hidden="true"></i>
+                            <span>
+                                <span class="skills__title">Ferramentas de Produtividade</span>
+                                <span class="skills__subtitle">Apoio à documentação e análise</span>
+                            </span>
+                            <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
+                        </button>
+                        <div class="skills__list grid" id="skill-list-5">
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Figma</h3>
-                                    <span class="skills__number">40%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__figma"></span>
-                                </div>
+                                <h3 class="skills__name">Excel</h3>
+                                <p class="skills__evidence">Organização, conferência e análise de dados.</p>
                             </div>
-
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Adobe Photoshop</h3>
-                                    <span class="skills__number">80%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__photoshop"></span>
-                                </div>
+                                <h3 class="skills__name">Word / PowerPoint</h3>
+                                <p class="skills__evidence">Documentação e apresentação de soluções.</p>
                             </div>
-
                             <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Adobe Premiere Pro</h3>
-                                    <span class="skills__number">90%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__adobepremierepro"></span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Canvas</h3>
-                                    <span class="skills__number">100%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__canvas"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--==================== SKILLS 6 (Pacote Office) ====================-->
-                    <div class="skills__content skills__close">
-                        <div class="skills__header">
-                            <i class="uil uil-chart-line skills__icon"></i>
-
-                            <div>
-                                <h1 class="skills__title">Pacote Office</h1>
-                                <span class="skills__subtitle">Mais de 3 anos</span>
-                            </div>
-
-                            <i class="uil uil-angle-down skills__arrow"></i>
-                        </div>
-
-                        <div class="skills__list grid">
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Word</h3>
-                                    <span class="skills__number">100%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__word"></span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Excel</h3>
-                                    <span class="skills__number">100%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__excel"></span>
-                                </div>
-                            </div>
-
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">PowerPoint</h3>
-                                    <span class="skills__number">100%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__powerpoint"></span>
-                                </div>
+                                <h3 class="skills__name">IA aplicada / RAG</h3>
+                                <p class="skills__evidence">Consulta de documentos e triagem com trilha de decisão nos projetos autorais.</p>
                             </div>
                         </div>
                     </div>
@@ -828,7 +666,7 @@
 <!--==================== SERVICES ====================-->
         <section class="services section services--center" id="services">
             <h2 class="section__title">Serviços</h2>
-            <span class="section__subtitle">O que ofereço</span>
+            <span class="section__subtitle">Como posso contribuir</span>
 
             <div class="services__container container grid">
                 <!--==================== SERVICES 1 (RPA) ====================-->
@@ -843,19 +681,19 @@
                         <ul class="services__modal-services grid">
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                <p>Desenvolvimento de robôs para tarefas repetitivas.</p>
+                                <p>Desenvolvimento e sustentação de automações em Python e Robot Framework.</p>
                             </li>
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                <p>Integração entre sistemas via API ou Interface.</p>
+                                <p>Integração de sistemas via APIs REST e interfaces.</p>
                             </li>
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                <p>Web Scraping e extração de dados automatizada.</p>
+                                <p>Extração de dados e validação de arquivos e registros.</p>
                             </li>
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                <p>Otimização de fluxos de trabalho com Python.</p>
+                                <p>Diagnóstico de falhas, retentativas e tratamento de exceções.</p>
                             </li>
                         </ul>
                     </div>
@@ -865,7 +703,7 @@
                 <div class="services__content">
                     <div class="services__header-card">
                         <i class="uil uil-arrow services__icon"></i>
-                        <h3 class="services__title">Desenvolvimento <br> Web e APIs</h3>
+                        <h3 class="services__title">Backend Python <br> e APIs</h3>
                         <i class="uil uil-arrow-right services__icon-arrow"></i>
                     </div>
 
@@ -873,19 +711,19 @@
                         <ul class="services__modal-services grid">
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                <p>Criação de sites e sistemas web responsivos.</p>
+                                <p>Desenvolvimento de serviços e APIs REST com Python.</p>
                             </li>
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                <p>Desenvolvimento de APIs robustas e escaláveis.</p>
+                                <p>Validação de dados e implementação de regras de negócio.</p>
                             </li>
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                <p>Manutenção e otimização de performance.</p>
+                                <p>Investigação e correção de bugs em código de aplicação.</p>
                             </li>
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                <p>Implementação de boas práticas de segurança.</p>
+                                <p>Testes automatizados e logs para validar e acompanhar as soluções.</p>
                             </li>
                         </ul>
                     </div>
@@ -907,11 +745,11 @@
                             </li>
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                <p>Consultas complexas em SQL e MongoDB.</p>
+                                <p>Consultas e validação de dados em SQL e MongoDB.</p>
                             </li>
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                <p>ETL e tratamento de dados para relatórios.</p>
+                                <p>Tratamento de dados com Python para integrações e relatórios.</p>
                             </li>
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
@@ -925,7 +763,47 @@
 
         <!--==================== PORTFOLIO ====================-->
         <section class="portfolio section" id="portfolio">
-
+            <h2 class="section__title">Projetos</h2>
+            <span class="section__subtitle">Backend, automação e confiabilidade</span>
+            <div class="portfolio__container container grid">
+                <article class="portfolio__card">
+                    <span class="portfolio__category">Análise de risco de falhas</span>
+                    <h3 class="portfolio__title">Automation Failure Predictor</h3>
+                    <p class="portfolio__description">API que avalia registros de execução e calcula risco por regras determinísticas, com explicação, causas prováveis e ações recomendadas.</p>
+                    <p class="portfolio__stack">Python · FastAPI · Pydantic · SQLAlchemy · SQLite · pytest · Docker</p>
+                    <a href="https://github.com/jvbrandao18/automation-failure-predictor" target="_blank" rel="noopener noreferrer" class="portfolio__link">
+                        Ver repositório <i class="uil uil-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+                <article class="portfolio__card">
+                    <span class="portfolio__category">Orquestração assíncrona</span>
+                    <h3 class="portfolio__title">RPA Automation Orchestrator</h3>
+                    <p class="portfolio__description">API para enfileirar e acompanhar jobs de automação simulados, com estados de execução, retentativas, timeout e proteção contra execução duplicada.</p>
+                    <p class="portfolio__stack">Python · FastAPI · Celery · Redis · SQLite · Docker Compose</p>
+                    <a href="https://github.com/jvbrandao18/rpa-automation-orchestrator" target="_blank" rel="noopener noreferrer" class="portfolio__link">
+                        Ver repositório <i class="uil uil-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+                <article class="portfolio__card">
+                    <span class="portfolio__category">Triagem com decisão auditável</span>
+                    <h3 class="portfolio__title">Smart Ticket Classifier</h3>
+                    <p class="portfolio__description">API que classifica chamados, sugere prioridade e fila e registra a decisão. Aplica regras locais e oferece fallback opcional por LLM.</p>
+                    <p class="portfolio__stack">Python · FastAPI · Pydantic · SQLAlchemy · pytest · Docker</p>
+                    <a href="https://github.com/jvbrandao18/smart-ticket-classifier" target="_blank" rel="noopener noreferrer" class="portfolio__link">
+                        Ver repositório <i class="uil uil-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+                <article class="portfolio__card">
+                    <span class="portfolio__category">Backend RAG para documentos</span>
+                    <h3 class="portfolio__title">Internal Docs Copilot</h3>
+                    <p class="portfolio__description">API que ingere PDF, XLSX e CSV e responde com fontes e trilha de auditoria. Recusa respostas quando a evidência recuperada é insuficiente.</p>
+                    <p class="portfolio__stack">Python · FastAPI · OpenAI API · ChromaDB · SQLite · pytest</p>
+                    <a href="https://github.com/jvbrandao18/internal-docs-copilot" target="_blank" rel="noopener noreferrer" class="portfolio__link">
+                        Ver repositório <i class="uil uil-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+            </div>
+            <p class="portfolio__note container">Projetos autorais de portfólio. As demonstrações não representam sistemas corporativos em produção.</p>
         </section>
 
         <!--==================== PROJECT IN MIND ====================-->
@@ -958,7 +836,7 @@
             <div class="footer__container container grid">
                 <div>
                     <h1 class="footer__title">João Vitor</h1>
-                    <span class="footer__subtitle">Analista de TI</span>
+                    <span class="footer__subtitle">Python · Backend · Automação</span>
                 </div>
 
                 <ul class="footer__links">
@@ -996,24 +874,6 @@
         <i class="uil uil-arrow-up scrollup__icon"></i>
     </a>
 
-
-    <!-- funcao para carregar a porcentagem e animar o circulo -->
-    <script>
-        const number = document.getElementById("number");
-        let counter = 0;
-        const intervalId = setInterval(() => {
-            if (!number) {
-                clearInterval(intervalId);
-                return;
-            }
-            if (counter === 65) {
-                clearInterval(intervalId);
-                return;
-            }
-            counter += 1;
-            number.innerHTML = counter + "%";
-        }, 15);
-    </script>
 
     <!--==================== MAIN JS ====================-->
     <script src="assets/js/main.js"></script>
