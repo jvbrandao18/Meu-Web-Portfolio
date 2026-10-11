@@ -11,6 +11,7 @@ Site de portfólio pessoal com layout responsivo, seções de apresentação, ha
 - Quatro projetos autorais com links para os repositórios
 - Métricas de atendimentos com período e definição explícitos
 - Seções com conteúdo organizado e foco em usabilidade
+- Controles de navegação, tema, habilidades e serviços com acesso por teclado
 
 ## Tecnologias
 - HTML5
@@ -33,7 +34,7 @@ Site de portfólio pessoal com layout responsivo, seções de apresentação, ha
 ```
 ## Funcionalidades
 - Navegação com destaque da seção ativa
-- Menu responsivo (mobile)
+- Menu responsivo em celular e tablet, com navegação visível em desktop
 - Alternância de tema (claro/escuro)
 - Seção de serviços com expansão suave ao passar o mouse
 - Links de contato (mailto)

@@ -1,53 +1,59 @@
-/*==================== MENU SHOW e HIDDEN ====================*/
+/*==================== RESPONSIVE NAVIGATION ====================*/
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
-    navClose = document.getElementById('nav-close')
+    navClose = document.getElementById('nav-close'),
+    desktopNavigation = window.matchMedia('(min-width: 1024px)')
 
-/*===== MENU SHOW =====*/
-/* Validate if constant exists */
-if(navToggle){
-    navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
+function setNavOpen(open, restoreFocus = false) {
+    if (!navMenu || !navToggle) return
+    const mobileOpen = open && !desktopNavigation.matches
+    navMenu.classList.toggle('show-menu', mobileOpen)
+    navToggle.setAttribute('aria-expanded', String(mobileOpen))
+    navToggle.setAttribute('aria-label', mobileOpen ? 'Fechar menu' : 'Abrir menu')
+    if (restoreFocus && !desktopNavigation.matches) navToggle.focus()
+    navMenu.inert = !desktopNavigation.matches && !mobileOpen
+    if (navMenu.inert) navMenu.setAttribute('aria-hidden', 'true')
+    else navMenu.removeAttribute('aria-hidden')
+}
+
+if (navToggle && navMenu) {
+    setNavOpen(false)
+    navToggle.addEventListener('click', () => {
+        const open = navToggle.getAttribute('aria-expanded') !== 'true'
+        setNavOpen(open)
+        if (open) navMenu.querySelector('.nav__link')?.focus()
+    })
+    navClose?.addEventListener('click', () => setNavOpen(false, true))
+    navMenu.querySelectorAll('.nav__link').forEach(link => {
+        link.addEventListener('click', () => setNavOpen(false, true))
+    })
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && navMenu.classList.contains('show-menu')) {
+            setNavOpen(false, true)
+        }
+    })
+    desktopNavigation.addEventListener('change', () => {
+        const menuFocused = navMenu.contains(document.activeElement)
+        setNavOpen(false, menuFocused)
     })
 }
-
-/*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
-if(navClose){
-    navClose.addEventListener('click', () =>{
-        navMenu.classList.remove('show-menu')
-    })
-}
-
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
-
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*==================== ACCORDION SKILLS ====================*/
-const skillsContent = document.getElementsByClassName('skills__content'),
-    skillsHeader = document.querySelectorAll('.skills__header')
+const skillsContent = document.querySelectorAll('.skills__content')
 
-function toggleSkills(){
-    const itemClass = this.parentNode.className
-
-    for (let i = 0; i < skillsContent.length; i++) {
-        skillsContent[i].className = 'skills__content skills__close'
-        skillsContent[i].querySelector('.skills__header').setAttribute('aria-expanded', 'false')
-    }
-    if(itemClass === 'skills__content skills__close'){
-        this.parentNode.className = 'skills__content skills__open'
-        this.setAttribute('aria-expanded', 'true')
-    }
+function setSkillOpen(content, open) {
+    content.classList.toggle('skills__open', open)
+    content.classList.toggle('skills__close', !open)
+    content.querySelector('.skills__header').setAttribute('aria-expanded', String(open))
+    content.querySelector('.skills__list').hidden = !open
 }
 
-skillsHeader.forEach((el) =>{
-    el.addEventListener('click', toggleSkills)
+skillsContent.forEach(content => {
+    setSkillOpen(content, content.classList.contains('skills__open'))
+    content.querySelector('.skills__header').addEventListener('click', () => {
+        const open = !content.classList.contains('skills__open')
+        skillsContent.forEach(item => setSkillOpen(item, item === content && open))
+    })
 })
 
 /*==================== QUALIFICATION TABS ====================*/
@@ -76,16 +82,38 @@ tabs.forEach(tab =>{
 /*==================== TESTIMONIAL ====================*/
 
 
-/*==================== SERVICES HOVER FALLBACK ====================*/
-const serviceCards = document.querySelectorAll('.services__content')
+/*==================== SERVICES EXPANSION ====================*/
+const serviceCards = document.querySelectorAll('.services__content'),
+    hoverServices = window.matchMedia('(hover: hover) and (pointer: fine)')
 
-serviceCards.forEach((card) => {
-    card.addEventListener('mouseenter', () => {
-        card.classList.add('is-open')
+serviceCards.forEach(card => {
+    const button = card.querySelector('.services__header-card'),
+        details = card.querySelector('.services__dropdown')
+    let pinned = false
+
+    function setServiceOpen(open) {
+        card.classList.toggle('is-open', open)
+        button.setAttribute('aria-expanded', String(open))
+        details.hidden = !open
+    }
+
+    setServiceOpen(false)
+    button.addEventListener('click', () => {
+        pinned = !pinned
+        setServiceOpen(pinned)
     })
-
+    card.addEventListener('mouseenter', () => {
+        if (hoverServices.matches) setServiceOpen(true)
+    })
     card.addEventListener('mouseleave', () => {
-        card.classList.remove('is-open')
+        if (!pinned) setServiceOpen(false)
+    })
+    card.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+            pinned = false
+            setServiceOpen(false)
+            button.focus()
+        }
     })
 })
 
@@ -131,33 +159,31 @@ function scrollUp(){
 window.addEventListener('scroll', scrollUp)
 
 /*==================== DARK LIGHT THEME ====================*/ 
-const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-const iconTheme = 'uil-sun'
+const themeButton = document.getElementById('theme-button'),
+    darkTheme = 'dark-theme',
+    iconTheme = 'uil-sun'
 
-//Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
+// Storage can be unavailable in private or restricted browser contexts.
+let selectedTheme = null
+try {
+    selectedTheme = localStorage.getItem('selected-theme')
+} catch {}
 
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+if (selectedTheme === 'dark') document.body.classList.add(darkTheme)
 
-// We validate if the user previously chose a topic
-if (selectedTheme && themeButton) {
-    // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-    themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
+function updateThemeButton() {
+    if (!themeButton) return
+    const dark = document.body.classList.contains(darkTheme)
+    themeButton.classList.toggle(iconTheme, dark)
+    themeButton.setAttribute('aria-pressed', String(dark))
+    themeButton.setAttribute('aria-label', dark ? 'Ativar tema claro' : 'Ativar tema escuro')
 }
 
-// Activate / deactivate the theme manually with the button
-if (themeButton) {
-    themeButton.addEventListener('click', () => {
-        // Add or remove the dark / icon theme
-        document.body.classList.toggle(darkTheme)
-        themeButton.classList.toggle(iconTheme)
-        //We save the theme and the current icon that the user chose
-        localStorage.setItem('selected-theme', getCurrentTheme())
-        localStorage.setItem('selected-icon', getCurrentIcon())
-    })
-}
+updateThemeButton()
+themeButton?.addEventListener('click', () => {
+    document.body.classList.toggle(darkTheme)
+    updateThemeButton()
+    try {
+        localStorage.setItem('selected-theme', document.body.classList.contains(darkTheme) ? 'dark' : 'light')
+    } catch {}
+})

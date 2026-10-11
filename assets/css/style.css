@@ -143,6 +143,37 @@ img {
     height: auto;
 }
 
+/* Keyboard access and semantic controls */
+[hidden] { display: none !important; }
+a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--title-color);
+    outline-offset: 4px;
+}
+.nav__toggle, .nav__close, .change-theme {
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    line-height: 1;
+}
+.skip-link {
+    position: fixed;
+    top: .5rem;
+    left: .5rem;
+    padding: .75rem 1rem;
+    background: var(--container-color);
+    color: var(--title-color);
+    z-index: calc(var(--z-modal) + 1);
+    transform: translateY(-200%);
+}
+.skip-link:focus { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .nav__menu, .skills__arrow, .services__content,
+    .services__header-card, .services__icon-arrow, .services__dropdown {
+        transition: none;
+    }
+}
+
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
     padding: 2rem 0 4rem;
@@ -215,7 +246,7 @@ img {
     color: var(--first-color);
 }
 
-@media screen and (max-width: 3250px) {
+@media screen and (max-width: 1023px) {
     .nav__menu {
         position: fixed;
         bottom: -100%;
@@ -226,6 +257,8 @@ img {
         box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
         border-radius: 1.5rem 1.5rem 0 0;
         transition: .3s;
+        max-height: 100dvh;
+        overflow-y: auto;
     }
 }
 
@@ -809,19 +842,18 @@ img {
     overflow: hidden;
     cursor: pointer;
     height: auto;
-    max-height: 70px;
-    /* Tighter collapsed height */
+    min-height: 70px;
+    /* Let longer titles fit when collapsed. */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     /* Ensure content starts at top */
 }
 
-.services__content:hover,
 .services__content.is-open {
     box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
-    max-height: 420px;
-    /* Expand on hover */
+    max-height: none;
+    /* Keep all service details visible at every width. */
     background-color: var(--body-color);
     /* Slight contrast on hover */
     padding-bottom: 2rem;
@@ -839,9 +871,15 @@ img {
     /* Fill the container in collapsed state */
     min-height: 38px;
     /* Minimum height for icon/text */
+    flex-shrink: 0;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
 }
 
-.services__content:hover .services__header-card,
 .services__content.is-open .services__header-card {
     margin-bottom: 1rem;
     height: auto;
@@ -861,6 +899,7 @@ img {
 .services__title {
     font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
+    color: var(--title-color);
     flex-grow: 1;
     line-height: 1.2;
     margin: 0;
@@ -876,7 +915,6 @@ img {
     align-items: center;
 }
 
-.services__content:hover .services__icon-arrow,
 .services__content.is-open .services__icon-arrow {
     transform: rotate(90deg);
 }
@@ -890,11 +928,10 @@ img {
     transition: max-height 0.4s ease, opacity 0.3s ease;
 }
 
-.services__content:hover .services__dropdown,
 .services__content.is-open .services__dropdown {
     opacity: 1;
     visibility: visible;
-    max-height: 320px;
+    max-height: none;
 }
 
 .services__modal-services {
@@ -1221,25 +1258,6 @@ img {
         column-gap: 1rem;
     }
 
-    .nav__icon,
-    .nav__close,
-    .nav__toggle {
-        display: none;
-    }
-
-    .nav__list {
-        display: flex;
-        column-gap: 2rem;
-    }
-
-    .nav__menu {
-        margin-left: auto;
-    }
-
-    .change-theme {
-        margin: 0;
-    }
-
     .home__container {
         gap: 5rem;
     }
@@ -1326,6 +1344,22 @@ img {
     .footer__copy {
         margin-top: 4.5rem;
     }
+}
+
+/* Desktop navigation starts where all seven links fit. */
+@media screen and (min-width: 1024px) {
+    .nav__menu {
+        position: static;
+        width: auto;
+        margin-left: auto;
+    }
+    .nav__list {
+        display: flex;
+        column-gap: 1.25rem;
+    }
+    .nav__link { white-space: nowrap; }
+    .nav__icon, .nav__close, .nav__toggle { display: none; }
+    .change-theme { margin: 0; }
 }
 
 /* For large devices */
