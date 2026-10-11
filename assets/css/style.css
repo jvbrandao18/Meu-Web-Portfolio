@@ -1363,3 +1363,29 @@ img {
     box-shadow: none !important;
     outline: none !important;
 }
+
+/* Content refresh: preserve the existing layout and palette. */
+.skills__header {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+}
+.skills__title, .skills__subtitle { display: block; }
+.skills__evidence { font-size: var(--small-font-size); line-height: 1.6; margin-top: .4rem; }
+.skills__header:focus-visible, .portfolio__link:focus-visible { outline: 2px solid var(--first-color); outline-offset: 5px; }
+.about__metrics-note { font-size: var(--smaller-font-size); line-height: 1.6; margin: -1rem 0 2rem; text-align: center; }
+.portfolio__container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.portfolio__card { background: var(--container-color); border: 1px solid var(--scroll-bar-color); border-radius: .75rem; padding: 1.75rem; display: flex; flex-direction: column; gap: .85rem; }
+.portfolio__category { color: var(--first-color); font-size: var(--small-font-size); font-weight: var(--font-medium); }
+.portfolio__title { font-size: var(--h3-font-size); overflow-wrap: anywhere; }
+.portfolio__description { line-height: 1.7; }
+.portfolio__stack { font-size: var(--smaller-font-size); line-height: 1.7; }
+.portfolio__link { color: var(--first-color); font-weight: var(--font-medium); margin-top: auto; padding-top: .5rem; }
+.portfolio__note { font-size: var(--small-font-size); line-height: 1.6; text-align: center; margin-top: 1.5rem; }
+@media screen and (max-width: 568px) {
+    .portfolio__container { grid-template-columns: 1fr; }
+    .portfolio__card { padding: 1.25rem; }
+}

@@ -38,9 +38,11 @@ function toggleSkills(){
 
     for (let i = 0; i < skillsContent.length; i++) {
         skillsContent[i].className = 'skills__content skills__close'
+        skillsContent[i].querySelector('.skills__header').setAttribute('aria-expanded', 'false')
     }
     if(itemClass === 'skills__content skills__close'){
         this.parentNode.className = 'skills__content skills__open'
+        this.setAttribute('aria-expanded', 'true')
     }
 }
 
