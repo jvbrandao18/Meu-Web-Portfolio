@@ -177,7 +177,7 @@
 
                     <div class="about__buttons">
                         <a href="#contact" class="button button--flex">
-                            Solicitar CV<i class="uil uil-message button__icon"></i>
+                            Solicitar currículo<i class="uil uil-message button__icon" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -368,32 +368,32 @@
         <!--==================== QUALIFICATION ====================-->
         <section class="qualification section" id="qualifications">
             <h2 class="section__title">Qualificações</h2>
-            <span class="section__subtitle">Minha jornada profissional</span>
+            <span class="section__subtitle">Experiência profissional, formação e cursos</span>
 
             <div class="qualification__container container grid">
-                <div class="qualification__tabs grid">
-                    <div class="qualification__button button--flex qualification__active" data-target='#education'>
-                        <i class="uil uil-graduation-cap qualification__icon"></i>
-                        Formação
-                    </div>
-
-                    <div class="qualification__button button--flex" data-target="#work">
-                        <i class="uil uil-briefcase-alt qualification__icon"></i>
+                <div class="qualification__tabs grid" role="tablist" aria-label="Qualificações">
+                    <button type="button" class="qualification__button button--flex qualification__active" id="work-tab" role="tab" aria-selected="true" aria-controls="work" tabindex="0" data-target="#work">
+                        <i class="uil uil-briefcase-alt qualification__icon" aria-hidden="true"></i>
                         Trabalho
-                    </div>
+                    </button>
+
+                    <button type="button" class="qualification__button button--flex" id="education-tab" role="tab" aria-selected="false" aria-controls="education" tabindex="-1" data-target="#education">
+                        <i class="uil uil-graduation-cap qualification__icon" aria-hidden="true"></i>
+                        Formação
+                    </button>
                 </div>
 
                 <div class="qualification__sections">
                     <!--==================== QUALIFICATION CONTENT 1====================-->
-                    <div class="qualification__content qualification__active" data-content id="education">
+                    <div class="qualification__content" data-content id="education" role="tabpanel" aria-labelledby="education-tab" tabindex="0" hidden>
                         <!--==================== QUALIFICATION 1 ====================-->
                         <div class="qualification__data">
                             <div class="qualification__content qualification__content--left">
-                                <h3 class="qualification__title">Curso em JavaScript</h3>
-                                <span class="qualification__subtitle">IFRS</span>
+                                <h3 class="qualification__title">Pós-Graduação em Segurança da Informação</h3>
+                                <span class="qualification__subtitle">PUCPR Digital</span>
                                 <div class="qualification__calender">
                                     <i class="uil uil-calendar-alt"></i>
-                                    2019 - 2020 (30 horas)
+                                    2024 - 2025
                                 </div>
                             </div>
 
@@ -404,6 +404,7 @@
 
                             <div class="qualification__content qualification__content--right"></div>
                         </div>
+
                         <!--==================== QUALIFICATION 2 ====================-->
                         <div class="qualification__data">
                             <div class="qualification__content qualification__content--left"></div>
@@ -422,61 +423,8 @@
                                 </div>
                             </div>
                         </div>
+
                         <!--==================== QUALIFICATION 3 ====================-->
-                        <div class="qualification__data">
-                            <div class="qualification__content qualification__content--left">
-                                <h3 class="qualification__title">Tecnologias para Desenvolvimento Web</h3>
-                                <span class="qualification__subtitle">PUCPR</span>
-                                <div class="qualification__calender">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2021 - 2021 (6 meses)
-                                </div>
-                            </div>
-
-                            <div class="qualification__marker">
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-
-                            <div class="qualification__content qualification__content--right"></div>
-                        </div>
-                        <!--==================== QUALIFICATION 4 ====================-->
-                        <div class="qualification__data">
-                            <div class="qualification__content qualification__content--left"></div>
-
-                            <div class="qualification__marker">
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-
-                            <div class="qualification__content qualification__content--right">
-                                <h3 class="qualification__title">Como desenvolver Apps Atrativos e Eficazes</h3>
-                                <span class="qualification__subtitle">PUCPR</span>
-                                <div class="qualification__calender">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2021
-                                </div>
-                            </div>
-                        </div>
-                        <!--==================== QUALIFICATION 5 ====================-->
-                        <div class="qualification__data">
-                            <div class="qualification__content qualification__content--left">
-                                <h3 class="qualification__title">Curso em Java</h3>
-                                <span class="qualification__subtitle">Curso em Vídeo - Gustavo Guanabara</span>
-                                <div class="qualification__calender">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2022
-                                </div>
-                            </div>
-
-                            <div class="qualification__marker">
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-
-                            <div class="qualification__content qualification__content--right"></div>
-                        </div>
-                        <!--==================== QUALIFICATION 6 ====================-->
                         <div class="qualification__data">
                             <div class="qualification__content qualification__content--left"></div>
 
@@ -494,14 +442,72 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!--==================== QUALIFICATION 4 ====================-->
+                        <div class="qualification__data">
+                            <div class="qualification__content qualification__content--left">
+                                <h3 class="qualification__title">Curso em Java</h3>
+                                <span class="qualification__subtitle">Curso em Vídeo - Gustavo Guanabara</span>
+                                <div class="qualification__calender">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2022
+                                </div>
+                            </div>
+
+                            <div class="qualification__marker">
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+
+                            <div class="qualification__content qualification__content--right"></div>
+                        </div>
+
+                        <!--==================== QUALIFICATION 5 ====================-->
+                        <div class="qualification__data">
+                            <div class="qualification__content qualification__content--left"></div>
+
+                            <div class="qualification__marker">
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+
+                            <div class="qualification__content qualification__content--right">
+                                <h3 class="qualification__title">Como desenvolver Apps Atrativos e Eficazes</h3>
+                                <span class="qualification__subtitle">PUCPR</span>
+                                <div class="qualification__calender">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2021
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--==================== QUALIFICATION 6 ====================-->
+                        <div class="qualification__data">
+                            <div class="qualification__content qualification__content--left">
+                                <h3 class="qualification__title">Tecnologias para Desenvolvimento Web</h3>
+                                <span class="qualification__subtitle">PUCPR</span>
+                                <div class="qualification__calender">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2021 - 2021 (6 meses)
+                                </div>
+                            </div>
+
+                            <div class="qualification__marker">
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+
+                            <div class="qualification__content qualification__content--right"></div>
+                        </div>
+
                         <!--==================== QUALIFICATION 7 ====================-->
                         <div class="qualification__data">
                             <div class="qualification__content qualification__content--left">
-                                <h3 class="qualification__title">Pós-Graduação em Segurança da Informação</h3>
-                                <span class="qualification__subtitle">PUCPR Digital</span>
+                                <h3 class="qualification__title">Curso em JavaScript</h3>
+                                <span class="qualification__subtitle">IFRS</span>
                                 <div class="qualification__calender">
                                     <i class="uil uil-calendar-alt"></i>
-                                    2024 - 2025
+                                    2019 - 2020 (30 horas)
                                 </div>
                             </div>
 
@@ -514,122 +520,27 @@
                         </div>
                     </div>
                     <!--==================== QUALIFICATION CONTENT 2====================-->
-                    <div class="qualification__content" data-content id="work">
+                    <div class="qualification__content qualification__active" data-content id="work" role="tabpanel" aria-labelledby="work-tab" tabindex="0">
                         <!--==================== WORK 1 ====================-->
                         <div class="qualification__data">
-                            <div class="qualification__content qualification__content--left">
-                                <h3 class="qualification__title">Desenvolvedor Full Stack (Bolsista)</h3>
-                                <span class="qualification__subtitle">Go44 Transformação Digital</span>
-                                <div class="qualification__calender">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2020 - 2021
-                                </div>
-                            </div>
+                            <div class="qualification__content qualification__content--left"></div>
 
                             <div class="qualification__marker">
                                 <span class="qualification__rounder"></span>
                                 <span class="qualification__line"></span>
                             </div>
 
-                            <div class="qualification__content qualification__content--right"></div>
+                            <div class="qualification__content qualification__content--right">
+                                <h3 class="qualification__title">Analista de TI Pleno</h3>
+                                <span class="qualification__subtitle">Pontifícia Universidade Católica do Paraná</span>
+                                <div class="qualification__calender">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2025 - Presente
+                                </div>
+                            </div>
                         </div>
 
                         <!--==================== WORK 2 ====================-->
-                        <div class="qualification__data">
-                            <div class="qualification__content qualification__content--left"></div>
-
-                            <div class="qualification__marker">
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-
-                            <div class="qualification__content qualification__content--right">
-                                <h3 class="qualification__title">Editor de fotos e vídeos</h3>
-                                <span class="qualification__subtitle">Ka'alma Bijoias</span>
-                                <div class="qualification__calender">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2020 - Presente
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--==================== WORK 3 ====================-->
-                        <div class="qualification__data">
-                            <div class="qualification__content qualification__content--left">
-                                <h3 class="qualification__title">Estagiário</h3>
-                                <span class="qualification__subtitle">Pontifícia Universidade Católica do Paraná</span>
-                                <div class="qualification__calender">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2022 - 2023
-                                </div>
-                            </div>
-
-                            <div class="qualification__marker">
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-
-                            <div class="qualification__content qualification__content--right"></div>
-                        </div>
-
-                        <!--==================== WORK 4 ====================-->
-                        <div class="qualification__data">
-                            <div class="qualification__content qualification__content--left"></div>
-
-                            <div class="qualification__marker">
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-
-                            <div class="qualification__content qualification__content--right">
-                                <h3 class="qualification__title">ANL. Desenv. Sistemas JR</h3>
-                                <span class="qualification__subtitle">Pontifícia Universidade Católica do Paraná</span>
-                                <div class="qualification__calender">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2023 - 2024
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--==================== WORK 5 ====================-->
-                        <div class="qualification__data">
-                            <div class="qualification__content qualification__content--left">
-                                <h3 class="qualification__title">ANL. Projetos e Melhoria Continua JR</h3>
-                                <span class="qualification__subtitle">Pontifícia Universidade Católica do Paraná</span>
-                                <div class="qualification__calender">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2024
-                                </div>
-                            </div>
-
-                            <div class="qualification__marker">
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-
-                            <div class="qualification__content qualification__content--right"></div>
-                        </div>
-
-                        <!--==================== WORK 6 ====================-->
-                        <div class="qualification__data">
-                            <div class="qualification__content qualification__content--left"></div>
-
-                            <div class="qualification__marker">
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-
-                            <div class="qualification__content qualification__content--right">
-                                <h3 class="qualification__title">Desenvolvedor de RPA JR</h3>
-                                <span class="qualification__subtitle">Pontifícia Universidade Católica do Paraná</span>
-                                <div class="qualification__calender">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2024 - 2025
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--==================== WORK 7 ====================-->
                         <div class="qualification__data">
                             <div class="qualification__content qualification__content--left">
                                 <h3 class="qualification__title">Desenvolvedor de RPA Pleno</h3>
@@ -648,7 +559,7 @@
                             <div class="qualification__content qualification__content--right"></div>
                         </div>
 
-                        <!--==================== WORK 8 ====================-->
+                        <!--==================== WORK 3 ====================-->
                         <div class="qualification__data">
                             <div class="qualification__content qualification__content--left"></div>
 
@@ -658,13 +569,108 @@
                             </div>
 
                             <div class="qualification__content qualification__content--right">
-                                <h3 class="qualification__title">Analista de TI Pleno</h3>
+                                <h3 class="qualification__title">Desenvolvedor de RPA JR</h3>
                                 <span class="qualification__subtitle">Pontifícia Universidade Católica do Paraná</span>
                                 <div class="qualification__calender">
                                     <i class="uil uil-calendar-alt"></i>
-                                    2025 - Presente
+                                    2024 - 2025
                                 </div>
                             </div>
+                        </div>
+
+                        <!--==================== WORK 4 ====================-->
+                        <div class="qualification__data">
+                            <div class="qualification__content qualification__content--left">
+                                <h3 class="qualification__title">ANL. Projetos e Melhoria Continua JR</h3>
+                                <span class="qualification__subtitle">Pontifícia Universidade Católica do Paraná</span>
+                                <div class="qualification__calender">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2024
+                                </div>
+                            </div>
+
+                            <div class="qualification__marker">
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+
+                            <div class="qualification__content qualification__content--right"></div>
+                        </div>
+
+                        <!--==================== WORK 5 ====================-->
+                        <div class="qualification__data">
+                            <div class="qualification__content qualification__content--left"></div>
+
+                            <div class="qualification__marker">
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+
+                            <div class="qualification__content qualification__content--right">
+                                <h3 class="qualification__title">ANL. Desenv. Sistemas JR</h3>
+                                <span class="qualification__subtitle">Pontifícia Universidade Católica do Paraná</span>
+                                <div class="qualification__calender">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2023 - 2024
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--==================== WORK 6 ====================-->
+                        <div class="qualification__data">
+                            <div class="qualification__content qualification__content--left">
+                                <h3 class="qualification__title">Estagiário</h3>
+                                <span class="qualification__subtitle">Pontifícia Universidade Católica do Paraná</span>
+                                <div class="qualification__calender">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2022 - 2023
+                                </div>
+                            </div>
+
+                            <div class="qualification__marker">
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+
+                            <div class="qualification__content qualification__content--right"></div>
+                        </div>
+
+                        <!--==================== WORK 7 ====================-->
+                        <div class="qualification__data">
+                            <div class="qualification__content qualification__content--left"></div>
+
+                            <div class="qualification__marker">
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+
+                            <div class="qualification__content qualification__content--right">
+                                <h3 class="qualification__title">Editor de fotos e vídeos</h3>
+                                <span class="qualification__subtitle">Ka'alma Bijoias</span>
+                                <div class="qualification__calender">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2020 - Presente
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--==================== WORK 8 ====================-->
+                        <div class="qualification__data">
+                            <div class="qualification__content qualification__content--left">
+                                <h3 class="qualification__title">Desenvolvedor Full Stack (Bolsista)</h3>
+                                <span class="qualification__subtitle">Go44 Transformação Digital</span>
+                                <div class="qualification__calender">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2020 - 2021
+                                </div>
+                            </div>
+
+                            <div class="qualification__marker">
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+
+                            <div class="qualification__content qualification__content--right"></div>
                         </div>
                     </div>
                 </div>
@@ -828,11 +834,18 @@
 
         <!--==================== CONTACT ME ====================-->
         <section class="contact section" id="contact">
-            <h2 class="section__title">Fale comigo no LinkedIn</h2>
-            <div class="contact__container">
+            <h2 class="section__title">Fale comigo</h2>
+            <span class="section__subtitle">Vamos conversar sobre Python, backend e automação.</span>
+            <div class="contact__container container">
                 <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-brand%C3%A3o-b951471b7/" target="_blank"
                     rel="noopener noreferrer" class="contact__link contact__cta">
-                    Enviar mensagem
+                    <i class="uil uil-linkedin" aria-hidden="true"></i>
+                    Conversar no LinkedIn
+                </a>
+                <a href="https://github.com/jvbrandao18" target="_blank"
+                    rel="noopener noreferrer" class="contact__link contact__cta">
+                    <i class="uil uil-github-alt" aria-hidden="true"></i>
+                    Ver perfil no GitHub
                 </a>
             </div>
         </section>
