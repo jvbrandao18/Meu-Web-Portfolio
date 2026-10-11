@@ -57,22 +57,36 @@ skillsContent.forEach(content => {
 })
 
 /*==================== QUALIFICATION TABS ====================*/
-const tabs = document.querySelectorAll('[data-target]'),
-    tabContents = document.querySelectorAll('[data-content]')
+const tabs = [...document.querySelectorAll('.qualification__button[data-target]')],
+    tabContents = document.querySelectorAll('.qualification [data-content]')
 
-tabs.forEach(tab =>{
-    tab.addEventListener('click', () =>{
-        const target = document.querySelector(tab.dataset.target)
+function activateQualification(tab) {
+    const target = document.querySelector(tab.dataset.target)
+    tabContents.forEach(panel => {
+        const active = panel === target
+        panel.classList.toggle('qualification__active', active)
+        panel.hidden = !active
+    })
+    tabs.forEach(item => {
+        const active = item === tab
+        item.classList.toggle('qualification__active', active)
+        item.setAttribute('aria-selected', String(active))
+        item.tabIndex = active ? 0 : -1
+    })
+}
 
-        tabContents.forEach(tabContent =>{
-            tabContent.classList.remove('qualification__active')
-        })     
-        target.classList.add('qualification__active')
-
-        tabs.forEach(tab =>{
-            tab.classList.remove('qualification__active')
-        })
-        tab.classList.add('qualification__active')
+tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activateQualification(tab))
+    tab.addEventListener('keydown', event => {
+        let next = index
+        if (event.key === 'ArrowRight') next = (index + 1) % tabs.length
+        else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length
+        else if (event.key === 'Home') next = 0
+        else if (event.key === 'End') next = tabs.length - 1
+        else return
+        event.preventDefault()
+        activateQualification(tabs[next])
+        tabs[next].focus()
     })
 })
 
