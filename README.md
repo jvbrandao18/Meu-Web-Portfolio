@@ -33,9 +33,9 @@ Site de portfólio pessoal com layout responsivo, seções de apresentação, ha
 ```
 ## Funcionalidades
 - Navegação com destaque da seção ativa
-- Menu responsivo (mobile)
+- Menu responsivo em celular e tablet, com navegação visível em desktop
 - Alternância de tema (claro/escuro)
-- Seção de serviços com expansão suave ao passar o mouse
+- Seção de serviços com expansão por mouse, toque ou teclado e estado acessível
 - Links de contato (mailto)
 
 ## Métricas

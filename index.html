@@ -17,6 +17,7 @@
 
 <body>
     <!--==================== HEADER ====================-->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
     <header class="header" id="header">
         <nav class="nav container">
             <a href="#" class="nav__logo">João Vitor</a>
@@ -59,22 +60,22 @@
                         </a>
                     </li>
                 </ul>
-                <i class="uil uil-times nav__close" id="nav-close"></i>
+                <button type="button" class="uil uil-times nav__close" id="nav-close" aria-label="Fechar menu"></button>
             </div>
 
             <div class="nav__btns">
                 <!-- Theme change button -->
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <button type="button" class="uil uil-moon change-theme" id="theme-button" aria-label="Ativar tema escuro" aria-pressed="false"></button>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="uil uil-apps"></i>
-                </div>
+                <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">
+                    <i class="uil uil-apps" aria-hidden="true"></i>
+                </button>
             </div>
         </nav>
     </header>
 
     <!--==================== MAIN ====================-->
-    <main class="main">
+    <main class="main" id="main-content">
         <!--==================== HOME ====================-->
         <section class="home section" id="home">
             <div class="home__container container grid">
@@ -228,7 +229,7 @@
                             </span>
                             <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
                         </button>
-                        <div class="skills__list grid" id="skill-list-1">
+                        <div class="skills__list grid" id="skill-list-1" hidden>
                             <div class="skills__data">
                                 <h3 class="skills__name">Robot Framework / BotCity</h3>
                                 <p class="skills__evidence">Desenvolvimento, sustentação e migração de automações.</p>
@@ -256,7 +257,7 @@
                             </span>
                             <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
                         </button>
-                        <div class="skills__list grid" id="skill-list-2">
+                        <div class="skills__list grid" id="skill-list-2" hidden>
                             <div class="skills__data">
                                 <h3 class="skills__name">SQL / PostgreSQL / MongoDB</h3>
                                 <p class="skills__evidence">Consultas, integração e validação de dados.</p>
@@ -286,7 +287,7 @@
                             </span>
                             <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
                         </button>
-                        <div class="skills__list grid" id="skill-list-3">
+                        <div class="skills__list grid" id="skill-list-3" hidden>
                             <div class="skills__data">
                                 <h3 class="skills__name">Jira / Scrum</h3>
                                 <p class="skills__evidence">Organização de demandas e acompanhamento de entregas.</p>
@@ -318,7 +319,7 @@
                             </span>
                             <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
                         </button>
-                        <div class="skills__list grid" id="skill-list-4">
+                        <div class="skills__list grid" id="skill-list-4" hidden>
                             <div class="skills__data">
                                 <h3 class="skills__name">React / Node.js / Java</h3>
                                 <p class="skills__evidence">Conhecimentos complementares em desenvolvimento de aplicações.</p>
@@ -346,7 +347,7 @@
                             </span>
                             <i class="uil uil-angle-down skills__arrow" aria-hidden="true"></i>
                         </button>
-                        <div class="skills__list grid" id="skill-list-5">
+                        <div class="skills__list grid" id="skill-list-5" hidden>
                             <div class="skills__data">
                                 <h3 class="skills__name">Excel</h3>
                                 <p class="skills__evidence">Organização, conferência e análise de dados.</p>
@@ -679,13 +680,13 @@
             <div class="services__container container grid">
                 <!--==================== SERVICES 1 (RPA) ====================-->
                 <div class="services__content">
-                    <div class="services__header-card">
-                        <i class="uil uil-robot services__icon"></i>
-                        <h3 class="services__title">Automação de <br> Processos (RPA)</h3>
-                        <i class="uil uil-arrow-right services__icon-arrow"></i>
-                    </div>
+                    <button type="button" class="services__header-card" aria-expanded="false" aria-controls="service-details-1">
+                        <i aria-hidden="true" class="uil uil-robot services__icon"></i>
+                        <span class="services__title">Automação de <br> Processos (RPA)</span>
+                        <i aria-hidden="true" class="uil uil-arrow-right services__icon-arrow"></i>
+                    </button>
 
-                    <div class="services__dropdown">
+                    <div class="services__dropdown" id="service-details-1" hidden>
                         <ul class="services__modal-services grid">
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
@@ -709,13 +710,13 @@
 
                 <!--==================== SERVICES 2 (Web Dev) ====================-->
                 <div class="services__content">
-                    <div class="services__header-card">
-                        <i class="uil uil-arrow services__icon"></i>
-                        <h3 class="services__title">Backend Python <br> e APIs</h3>
-                        <i class="uil uil-arrow-right services__icon-arrow"></i>
-                    </div>
+                    <button type="button" class="services__header-card" aria-expanded="false" aria-controls="service-details-2">
+                        <i aria-hidden="true" class="uil uil-arrow services__icon"></i>
+                        <span class="services__title">Backend Python <br> e APIs</span>
+                        <i aria-hidden="true" class="uil uil-arrow-right services__icon-arrow"></i>
+                    </button>
 
-                    <div class="services__dropdown">
+                    <div class="services__dropdown" id="service-details-2" hidden>
                         <ul class="services__modal-services grid">
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
@@ -739,13 +740,13 @@
 
                 <!--==================== SERVICES 3 (Dashboards) ====================-->
                 <div class="services__content">
-                    <div class="services__header-card">
-                        <i class="uil uil-chart-line services__icon"></i>
-                        <h3 class="services__title">Dashboards <br> & Análise de Dados</h3>
-                        <i class="uil uil-arrow-right services__icon-arrow"></i>
-                    </div>
+                    <button type="button" class="services__header-card" aria-expanded="false" aria-controls="service-details-3">
+                        <i aria-hidden="true" class="uil uil-chart-line services__icon"></i>
+                        <span class="services__title">Dashboards <br> & Análise de Dados</span>
+                        <i aria-hidden="true" class="uil uil-arrow-right services__icon-arrow"></i>
+                    </button>
 
-                    <div class="services__dropdown">
+                    <div class="services__dropdown" id="service-details-3" hidden>
                         <ul class="services__modal-services grid">
                             <li class="services__modal-service">
                                 <i class="uil uil-check-circle services__modal-icon"></i>
