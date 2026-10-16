@@ -6,24 +6,22 @@
 :root {
     --header-height: 3rem;
 
-    /*========== Colors ==========*/
-    /* Change favorite color */
-    --hue-color: 360;
-    /*Purple 250 - Green 142 - Blue 230 - Pink 340 - Red 355 */
-
-    /* HSL color mode */
-    --first-color: hsl(var(--hue-color), 69%, 61%);
-    --first-color-second: hsl(var(--hue-color), 69%, 61%);
-    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
-    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
-    --title-color: hsl(var(--hue-color), 8%, 15%);
-    --text-color: hsl(var(--hue-color), 8%, 45%);
-    --text-color-light: hsl(var(--hue-color), 8%, 65%);
-    --input-color: hsl(var(--hue-color), 70%, 96%);
-    --body-color: hsl(var(--hue-color), 60%, 99%);
-    --container-color: #FFF;
-    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+    /* Neutral surfaces, graphite text and petroleum-blue accents. */
+    --first-color: #0369A1;
+    --first-color-second: #0F172A;
+    --first-color-alt: #075985;
+    --first-color-lighter: #BAE6FD;
+    --title-color: #0F172A;
+    --text-color: #475569;
+    --text-color-light: #64748B;
+    --input-color: #F1F5F9;
+    --body-color: #F8FAFC;
+    --container-color: #FFFFFF;
+    --scroll-bar-color: #E2E8F0;
+    --scroll-thumb-color: #64748B;
+    --on-accent-color: #FFFFFF;
+    --footer-text-color: #F8FAFC;
+    --footer-muted-color: #CBD5E1;
 
     /*========== Font and typography ==========*/
     --body-font: 'Poppins', sans-serif;
@@ -74,15 +72,19 @@
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
-    /* HSL color mode */
-    --first-color-second: hsl(var(--hue-color), 30%, 8%);
-    --title-color: hsl(var(--hue-color), 8%, 95%);
-    --text-color: hsl(var(--hue-color), 8%, 75%);
-    --input-color: hsl(var(--hue-color), 29%, 16%);
-    --body-color: hsl(var(--hue-color), 28%, 12%);
-    --container-color: hsl(var(--hue-color), 29%, 16%);
-    --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
-    --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+    --first-color: #38BDF8;
+    --first-color-second: #020617;
+    --first-color-alt: #7DD3FC;
+    --first-color-lighter: #BAE6FD;
+    --title-color: #F1F5F9;
+    --text-color: #CBD5E1;
+    --text-color-light: #94A3B8;
+    --input-color: #1E293B;
+    --body-color: #0F172A;
+    --container-color: #1E293B;
+    --scroll-bar-color: #334155;
+    --scroll-thumb-color: #94A3B8;
+    --on-accent-color: #0F172A;
 }
 
 /*========== Button Dark/Light ==========*/
@@ -431,14 +433,14 @@ a:focus-visible, button:focus-visible {
 .button {
     display: inline-block;
     background-color: var(--first-color);
-    color: #FFF;
+    color: var(--on-accent-color);
     padding: 1rem;
     border-radius: .5rem;
     font-weight: var(--font-medium);
 }
 
 .button:hover {
-    background-color: var(--first-color);
+    background-color: var(--first-color-alt);
 }
 
 .button__icon {
@@ -897,13 +899,13 @@ a:focus-visible, button:focus-visible {
 }
 
 .contact__link:hover {
-    opacity: 0.7;
+    color: var(--first-color);
 }
 
 .contact__link:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
-    opacity: 0.7;
+    color: var(--first-color);
 }
 
 
@@ -956,7 +958,7 @@ a:focus-visible, button:focus-visible {
 .footer__copy {
     font-size: var(--small-font-size);
     text-align: center;
-    color: var(--text-color-light);
+    color: var(--footer-muted-color);
     margin-top: var(--mb-3);
 }
 
@@ -964,7 +966,11 @@ a:focus-visible, button:focus-visible {
 .footer__subtitle,
 .footer__link,
 .footer__social {
-    color: #FFF;
+    color: var(--footer-text-color);
+}
+
+.footer a:focus-visible {
+    outline-color: var(--footer-text-color);
 }
 
 
@@ -975,7 +981,7 @@ a:focus-visible, button:focus-visible {
     right: 1rem;
     bottom: -20%;
     background-color: var(--first-color);
-    opacity: .8;
+    opacity: 1;
     padding: 0 .3rem;
     border-radius: .4rem;
     z-index: var(--z-tooltip);
@@ -983,12 +989,12 @@ a:focus-visible, button:focus-visible {
 }
 
 .scrollup:hover {
-    background-color: var(--first-color);
+    background-color: var(--first-color-alt);
 }
 
 .scrollup__icon {
     font-size: 1.5rem;
-    color: #FFF;
+    color: var(--on-accent-color);
 }
 
 /* Show scroll */
@@ -999,12 +1005,12 @@ a:focus-visible, button:focus-visible {
 /*========== SCROLL BAR ==========*/
 ::-webkit-scrollbar {
     width: .60rem;
-    background-color: #FFF;
+    background-color: var(--body-color);
     border-radius: .5rem;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--scroll-bar-color);
+    background-color: var(--scroll-thumb-color);
     border-radius: .5rem;
 
 }
